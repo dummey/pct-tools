@@ -43,7 +43,7 @@ def parse_page(page)
 
   data[:name] = html_doc.xpath("//h2").first.children.to_s
   data[:distance_from_trail] = _extract_from_core(html_doc, 'Distance from Trail')
-  data[:distance_from_mexico] = _extract_from_core(html_doc, 'Distance from Mexico').gsub('Aproximately ', '').gsub(' trail miles', '')
+  data[:distance_from_mexico] = _extract_from_core(html_doc, 'Distance from Mexico').gsub('Aproximately ', '').gsub(' trail miles', ' miles')
   data[:cheap_resupply] = _extract_from_core(html_doc, 'Inexpensive Trail Food Available')
   data[:post_office] = _extract_from_core(html_doc, 'Post Office')
   data[:other_info] = _extract_from_core(html_doc, 'Other Info')
